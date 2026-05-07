@@ -1,0 +1,22 @@
+{
+  "profile": {
+    "name": "Your Name",
+    "title": "Creative Designer & Video Editor",
+    "tagline": "สร้างสรรค์ผลงานออกแบบและวิดีโอที่โดดเด่น พร้อมนำเสนอไอเดียให้โลกได้เห็น",
+    "about": "สวัสดีครับ! ผมเป็นนักออกแบบกราฟิกและนักตัดต่อวิดีโอที่หลงใหลในการสร้างสรรค์ผลงาน",
+    "avatar": "",
+    "projects": 10,
+    "exp": 2,
+    "clients": 5,
+    "email": "email@example.com",
+    "phone": "0xx-xxx-xxxx",
+    "facebook": "",
+    "instagram": "",
+    "youtube": ""
+  },
+  "skills": [
+    { "id": "1", "name": "Photoshop", "icon": "", "level": 90 }
+  ],
+  "works": [],
+  "videos": []
+}

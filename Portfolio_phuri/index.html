@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio - ผลงานออกแบบกราฟิก ตัดต่อวิดีโอ และผลงานสร้างสรรค์">
+  <title>PHURI — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="#hero" class="nav-logo">PORTFOLIO</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#hero" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Works</a></li>
+        <li><a href="#videos">Videos</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="nav-admin" id="adminToggle" title="Admin Mode">⚙</button>
+        <button class="nav-hamburger" id="hamburger">☰</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content reveal">
+      <div class="hero-avatar" id="heroAvatar">
+        <img src="" alt="Profile" id="avatarImg">
+        <div class="hero-badge">✓</div>
+      </div>
+      <h1 id="heroName">Your Name</h1>
+      <p class="hero-subtitle" id="heroTitle">Creative Designer & Video Editor</p>
+      <p class="hero-tagline" id="heroTagline">สร้างสรรค์ผลงานออกแบบและวิดีโอที่โดดเด่น พร้อมนำเสนอไอเดียให้โลกได้เห็น
+      </p>
+      <div class="hero-actions">
+        <a href="#portfolio" class="btn btn-primary">ดูผลงาน ↓</a>
+        <a href="#contact" class="btn btn-outline">ติดต่อ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">About Me</p>
+        <h2 class="section-title">เกี่ยวกับตัวเอง</h2>
+      </div>
+      <div class="about-grid">
+        <div class="reveal">
+          <div id="aboutText">
+            <p>สวัสดีครับ! ผมเป็นนักออกแบบกราฟิกและนักตัดต่อวิดีโอที่หลงใหลในการสร้างสรรค์ผลงานสื่อดิจิทัล</p>
+            <p>ผมมีประสบการณ์ในการออกแบบสื่อสิ่งพิมพ์ สื่อออนไลน์ และการตัดต่อวิดีโอ
+              พร้อมนำเสนอผลงานที่มีคุณภาพและตอบโจทย์ความต้องการ</p>
+          </div>
+          <div class="about-stats" id="aboutStats">
+            <div class="stat-card">
+              <div class="stat-number" id="statProjects">0</div>
+              <div class="stat-label">ผลงาน</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="statExp">0</div>
+              <div class="stat-label">ปีประสบการณ์</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number" id="statClients">0</div>
+              <div class="stat-label">ลูกค้า</div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal">
+          <p class="section-label" style="text-align:left;margin-bottom:20px">Skills</p>
+          <div class="skills-grid" id="skillsGrid"></div>
+          <button class="section-add-btn" onclick="App.openModal('skill')">＋ เพิ่มทักษะ</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section id="portfolio">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Portfolio</p>
+        <h2 class="section-title">ผลงานออกแบบ</h2>
+        <p class="section-desc">รวมผลงานการออกแบบกราฟิก UI/UX และงานสร้างสรรค์ต่างๆ</p>
+      </div>
+      <div class="filter-tabs reveal" id="filterTabs"></div>
+      <div class="works-grid" id="worksGrid"></div>
+      <div style="text-align:center">
+        <button class="section-add-btn" onclick="App.openModal('work')">＋ เพิ่มผลงาน</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- VIDEOS -->
+  <section id="videos">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Videos</p>
+        <h2 class="section-title">ผลงานวิดีโอ</h2>
+        <p class="section-desc">ผลงานตัดต่อวิดีโอ Motion Graphics และ Content ต่างๆ</p>
+      </div>
+      <div class="video-grid" id="videoGrid"></div>
+      <div style="text-align:center">
+        <button class="section-add-btn" onclick="App.openModal('video')">＋ เพิ่มวิดีโอ</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label">Contact</p>
+        <h2 class="section-title">ติดต่อ</h2>
+        <p class="section-desc">พร้อมรับงานและร่วมงานกับทุกคนครับ</p>
+      </div>
+      <div class="contact-grid" id="contactGrid"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p>© <span id="footerYear"></span> <span id="footerName">PHURI</span>. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" onclick="App.closeLightbox()">
+    <button class="lightbox-close" onclick="App.closeLightbox()">✕</button>
+    <img src="" alt="" id="lightboxImg">
+    <div class="lightbox-info">
+      <h3 id="lightboxTitle"></h3>
+      <p id="lightboxDesc"></p>
+    </div>
+  </div>
+
+  <!-- VIDEO MODAL -->
+  <div class="modal-overlay" id="videoModal">
+    <div class="modal video-modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="videoModalTitle">Video</h3>
+        <button class="modal-close" onclick="App.closeVideoModal()">✕</button>
+      </div>
+      <div class="video-iframe-wrap">
+        <iframe id="videoIframe" src="" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADMIN MODALS -->
+  <div class="modal-overlay" id="adminModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="adminModalTitle">เพิ่มข้อมูล</h3>
+        <button class="modal-close" onclick="App.closeModal()">✕</button>
+      </div>
+      <form id="adminForm" onsubmit="App.handleSubmit(event)">
+        <div id="adminFormFields"></div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline" onclick="App.closeModal()">ยกเลิก</button>
+          <button type="submit" class="btn btn-primary" id="adminFormSubmit">บันทึก</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- PROFILE EDIT MODAL -->
+  <div class="modal-overlay" id="profileModal">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">แก้ไขโปรไฟล์</h3>
+        <button class="modal-close" onclick="App.closeProfileModal()">✕</button>
+      </div>
+      <form id="profileForm" onsubmit="App.saveProfile(event)">
+        <div class="form-group">
+          <label class="form-label">ชื่อ</label>
+          <input class="form-input" id="pName" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">ตำแหน่ง / Title</label>
+          <input class="form-input" id="pTitle" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">คำแนะนำตัว</label>
+          <textarea class="form-textarea" id="pTagline"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">เกี่ยวกับตัวเอง</label>
+          <textarea class="form-textarea" id="pAbout" rows="4"></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">รูปโปรไฟล์ (URL หรือ อัพโหลด)</label>
+          <input class="form-input" id="pAvatarUrl" placeholder="https://...">
+          <label class="form-file-label" style="margin-top:8px" id="pAvatarLabel">
+            📁 หรือเลือกไฟล์รูป
+            <input type="file" accept="image/*" class="form-file" id="pAvatarFile"
+              onchange="App.previewFile(this,'pAvatarPreview','pAvatarLabel')">
+          </label>
+          <div class="form-preview" id="pAvatarPreview"></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+          <div class="form-group"><label class="form-label">จำนวนผลงาน</label><input class="form-input" id="pProjects"
+              type="number" value="0"></div>
+          <div class="form-group"><label class="form-label">ปีประสบการณ์</label><input class="form-input" id="pExp"
+              type="number" value="0"></div>
+          <div class="form-group"><label class="form-label">ลูกค้า</label><input class="form-input" id="pClients"
+              type="number" value="0"></div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email</label>
+          <input class="form-input" id="pEmail" type="email">
+          <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
+            <span style="font-size:0.75rem;color:var(--text-muted)">ไอคอน:</span>
+            <input class="form-input" id="pEmailIconUrl" placeholder="URL ไอคอน" style="flex:1;padding:6px 10px;font-size:0.8rem">
+            <label class="form-file-label" style="padding:6px 12px;margin:0;font-size:0.75rem;white-space:nowrap" id="pEmailIconLabel">📁 อัพโหลด<input type="file" accept="image/*" class="form-file" onchange="App.handleContactIcon(this,'pEmailIconUrl','pEmailIconLabel')"></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">โทรศัพท์</label>
+          <input class="form-input" id="pPhone">
+          <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
+            <span style="font-size:0.75rem;color:var(--text-muted)">ไอคอน:</span>
+            <input class="form-input" id="pPhoneIconUrl" placeholder="URL ไอคอน" style="flex:1;padding:6px 10px;font-size:0.8rem">
+            <label class="form-file-label" style="padding:6px 12px;margin:0;font-size:0.75rem;white-space:nowrap" id="pPhoneIconLabel">📁 อัพโหลด<input type="file" accept="image/*" class="form-file" onchange="App.handleContactIcon(this,'pPhoneIconUrl','pPhoneIconLabel')"></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Facebook URL</label>
+          <input class="form-input" id="pFacebook">
+          <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
+            <span style="font-size:0.75rem;color:var(--text-muted)">ไอคอน:</span>
+            <input class="form-input" id="pFacebookIconUrl" placeholder="URL ไอคอน" style="flex:1;padding:6px 10px;font-size:0.8rem">
+            <label class="form-file-label" style="padding:6px 12px;margin:0;font-size:0.75rem;white-space:nowrap" id="pFacebookIconLabel">📁 อัพโหลด<input type="file" accept="image/*" class="form-file" onchange="App.handleContactIcon(this,'pFacebookIconUrl','pFacebookIconLabel')"></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Instagram URL</label>
+          <input class="form-input" id="pInstagram">
+          <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
+            <span style="font-size:0.75rem;color:var(--text-muted)">ไอคอน:</span>
+            <input class="form-input" id="pInstagramIconUrl" placeholder="URL ไอคอน" style="flex:1;padding:6px 10px;font-size:0.8rem">
+            <label class="form-file-label" style="padding:6px 12px;margin:0;font-size:0.75rem;white-space:nowrap" id="pInstagramIconLabel">📁 อัพโหลด<input type="file" accept="image/*" class="form-file" onchange="App.handleContactIcon(this,'pInstagramIconUrl','pInstagramIconLabel')"></label>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">YouTube URL</label>
+          <input class="form-input" id="pYoutube">
+          <div style="display:flex;align-items:center;gap:8px;margin-top:6px">
+            <span style="font-size:0.75rem;color:var(--text-muted)">ไอคอน:</span>
+            <input class="form-input" id="pYoutubeIconUrl" placeholder="URL ไอคอน" style="flex:1;padding:6px 10px;font-size:0.8rem">
+            <label class="form-file-label" style="padding:6px 12px;margin:0;font-size:0.75rem;white-space:nowrap" id="pYoutubeIconLabel">📁 อัพโหลด<input type="file" accept="image/*" class="form-file" onchange="App.handleContactIcon(this,'pYoutubeIconUrl','pYoutubeIconLabel')"></label>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline" onclick="App.closeProfileModal()">ยกเลิก</button>
+          <button type="submit" class="btn btn-primary">บันทึกโปรไฟล์</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- PIN LOGIN MODAL -->
+  <div class="modal-overlay" id="pinModal">
+    <div class="modal" style="max-width:380px;text-align:center">
+      <div class="modal-header" style="justify-content:center">
+        <h3 class="modal-title">🔐 ใส่รหัส Admin</h3>
+      </div>
+      <form id="pinForm">
+        <div class="form-group">
+          <input class="form-input" id="pinInput" type="password" placeholder="ใส่รหัส (ค่าเริ่มต้น: 1234)"
+            style="text-align:center;font-size:1.2rem;letter-spacing:8px" autocomplete="off">
+          <p id="pinError" style="color:#e74c3c;font-size:0.8rem;margin-top:8px"></p>
+        </div>
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline"
+            onclick="App.closeModal();document.querySelector('#pinModal').classList.remove('show');document.querySelector('#pinModal').style.display='none';document.body.style.overflow=''">ยกเลิก</button>
+          <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- CHANGE PIN MODAL -->
+  <div class="modal-overlay" id="changePinModal">
+    <div class="modal" style="max-width:400px">
+      <div class="modal-header">
+        <h3 class="modal-title">🔑 เปลี่ยนรหัส</h3>
+        <button class="modal-close"
+          onclick="document.querySelector('#changePinModal').classList.remove('show');document.querySelector('#changePinModal').style.display='none';document.body.style.overflow=''">✕</button>
+      </div>
+      <form id="changePinForm">
+        <div class="form-group"><label class="form-label">รหัสเดิม</label><input class="form-input" id="pinOld"
+            type="password" required></div>
+        <div class="form-group"><label class="form-label">รหัสใหม่ (อย่างน้อย 4 ตัว)</label><input class="form-input"
+            id="pinNew" type="password" required minlength="4"></div>
+        <div class="form-group"><label class="form-label">ยืนยันรหัสใหม่</label><input class="form-input"
+            id="pinConfirm" type="password" required></div>
+        <p id="changePinError" style="color:#e74c3c;font-size:0.8rem;margin-bottom:12px"></p>
+        <div class="form-actions">
+          <button type="button" class="btn btn-outline"
+            onclick="document.querySelector('#changePinModal').classList.remove('show');document.querySelector('#changePinModal').style.display='none';document.body.style.overflow=''">ยกเลิก</button>
+          <button type="submit" class="btn btn-primary">บันทึก</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ADMIN TOOLBAR -->
+  <div class="admin-toolbar" id="adminToolbar" style="display:none">
+    <span style="font-size:0.8rem;color:var(--accent);font-weight:600">⚙ ADMIN</span>
+    <span id="syncIndicator" style="font-size:0.75rem;color:var(--text-muted);margin-right:auto">✓ ซิงค์แล้ว</span>
+    <button class="btn btn-sm btn-outline" onclick="App.exportData()">💾 บันทึกเป็น JSON</button>
+    <button class="btn btn-sm btn-outline" onclick="App.importData()">📤 โหลด JSON</button>
+    <button class="btn btn-sm btn-outline" onclick="App.showChangePinModal()">🔑 เปลี่ยนรหัส</button>
+  </div>
+
+  <!-- CONFIRM DELETE MODAL -->
+  <div class="modal-overlay" id="confirmModal">
+    <div class="modal" style="max-width:380px;text-align:center">
+      <div class="modal-header" style="justify-content:center">
+        <h3 class="modal-title">⚠️ ยืนยันการลบ</h3>
+      </div>
+      <p id="confirmText" style="color:var(--text-secondary);margin-bottom:24px">ต้องการลบรายการนี้?</p>
+      <div class="form-actions">
+        <button class="btn btn-outline" onclick="App.cancelDelete()">ยกเลิก</button>
+        <button class="btn btn-danger" onclick="App.confirmDelete()">ลบเลย</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST CONTAINER -->
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>
